@@ -2,7 +2,8 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 
-import {SignUp} from '../screens';
+import SignUp from '../screens/SignUp';
+import SignIn from '../screens/SignIn';
 import Tabs from './tabBottom';
 
 const theme = {
@@ -20,8 +21,9 @@ const Navigation = () => {
     <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{headerShown: false}}
-        initialRouteName="SignUp">
-        {/* Sign Up */}
+        initialRouteName="SignIn">
+        {/* Sign Up + Sign In */}
+        <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
 
         {/* Tab Screen */}

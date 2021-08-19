@@ -14,28 +14,20 @@ import {Auth} from '../../../App';
 import apiWorker from '../../services/api';
 import styles from './styles';
 
-const SignUpContainer = (props) => {
+const SignInContainer = (props) => {
   const [showPassword, setShowPassword] = useState(false);
   const [infoLogin, setInfoLogin] = useState({
     email: '',
     password: '',
   });
   
-  const renderHeader = () => {
-    return (
-      <TouchableOpacity
-        style={styles.buttonHeader}
-        onPress={() => props.navigation.navigate('SignIn')}>
-        <Image
-          source={icons.back}
-          resizeMode="contain"
-          style={styles.iconHeader}
-        />
+  useState(() => {
+    const subscriber = Auth().onAuthStateChanged((info) => {
+      console.log('xx', info)
+    });
 
-        <Text style={styles.textHeader}>Sign Up</Text>
-      </TouchableOpacity>
-    );
-  };
+    return subscriber;
+  }, []);
 
   const renderLogo = () => {
     return (
@@ -64,46 +56,6 @@ const SignUpContainer = (props) => {
           />
         </View>
 
-        {/* Phone Number */}
-        <View style={styles.phoneNumber}>
-          <Text style={styles.textForm}>Phone Number</Text>
-
-          <View style={{flexDirection: 'row'}}>
-            {/* Country Code */}
-            <TouchableOpacity
-              style={styles.buttonCountryCode}
-              onPress={() => props.onSetModalVisible(true)}>
-              <View style={{justifyContent: 'center'}}>
-                <Image source={icons.down} style={styles.iconDown} />
-              </View>
-              <View style={styles.viewCountryCode}>
-                <Image
-                  source={{uri: props?.selectedArea?.flag}}
-                  resizeMode="contain"
-                  style={{
-                    width: 30,
-                    height: 30,
-                  }}
-                />
-              </View>
-
-              <View style={styles.viewCountryCode}>
-                <Text style={{color: COLORS.white, ...FONTS.body3}}>
-                  {props?.selectedArea?.callingCode}
-                </Text>
-              </View>
-            </TouchableOpacity>
-
-            {/* Phone Number */}
-            <TextInput
-              style={styles.inputPhoneNumber}
-              placeholder="Enter Phone Number"
-              placeholderTextColor={COLORS.white}
-              selectionColor={COLORS.white}
-            />
-          </View>
-        </View>
-
         {/* Password */}
         <View style={{marginTop: SIZES.padding * 2}}>
           <Text style={styles.textForm}>Password</Text>
@@ -128,31 +80,47 @@ const SignUpContainer = (props) => {
     );
   };
 
-  const renderButton = () => {
+  const renderButtonLogin = () => {
     return (
-      <View style={{margin: SIZES.padding * 3}}>
+      <View style={{margin: SIZES.padding * 3, marginBottom: 10}}>
         <TouchableOpacity
-          style={styles.buttonContinue}
+          style={styles.buttonLogin}
+          onPress={Login}>
+          <Text style={styles.textLogin}>Login</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+  
+  const renderButtonSignUp = () => {
+    return (
+      <View style={{margin: SIZES.padding * 3, marginTop: 0}}>
+        <TouchableOpacity
+          style={styles.buttonSignUp}
           onPress={signUpUser}>
-          <Text style={styles.textContinue}>Continue</Text>
+          <Text style={styles.textSignUp}>SignUp</Text>
         </TouchableOpacity>
       </View>
     );
   };
 
+  const Login = () => {
+    apiWorker.signInUser(infoLogin);
+  };
+
   const signUpUser = () => {
-    // () => props.navigation.navigate('Home')
-    apiWorker.signUpUser(infoLogin);
+    props.navigation.navigate('SignUp');
   };
 
   return (
     <ScrollView>
-      {renderHeader()}
+      <View style={styles.buttonHeader} />
       {renderLogo()}
       {renderForm()}
-      {renderButton()}
+      {renderButtonLogin()}
+      {renderButtonSignUp()}
     </ScrollView>
   );
 };
 
-export default SignUpContainer;
+export default SignInContainer;

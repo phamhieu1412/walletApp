@@ -5,11 +5,11 @@ import Auth from '@react-native-firebase/auth';
 import Navigation from './src/navigation';
 import {firebaseConfig} from './src/constants/const';
 
-// if (!firebase.apps.length) {
-//   firebase.initializeApp(firebaseConfig);
-// }
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
 
-// export {firebase, Auth};
+export {firebase, Auth};
 
 const App = () => {
   return <Navigation />;
