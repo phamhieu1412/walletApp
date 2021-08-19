@@ -38,15 +38,28 @@ class APIWorker {
         console.log(error);
       });
   };
-  
-  signInUser = async infoUser => {
+
+  signInUser = payload => {
     Auth()
-      .signInWithEmailAndPassword(infoUser.email, infoUser.password)
+      .signInWithEmailAndPassword(payload.email, payload.password)
       .then(res => {
-        Alert.alert(`signInUser success: ${JSON.stringify(res)}`);
+        return res;
       })
       .catch(error => {
-        console.log(error);
+        return error;
+      });
+  };
+
+  signOut = () => {
+    Auth()
+      .signOut()
+      .then(res => {
+        console.log('xxx res', res);
+        return res;
+      })
+      .catch(error => {
+        console.log('xxx error', error);
+        return error;
       });
   };
 

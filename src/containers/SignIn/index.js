@@ -6,11 +6,9 @@ import {
   Image,
   TextInput,
   ScrollView,
-  Alert,
 } from 'react-native';
 
-import {COLORS, SIZES, icons, images, FONTS} from '../../constants';
-import {Auth} from '../../../App';
+import {COLORS, SIZES, icons, images} from '../../constants';
 import apiWorker from '../../services/api';
 import styles from './styles';
 
@@ -20,14 +18,6 @@ const SignInContainer = (props) => {
     email: '',
     password: '',
   });
-  
-  useState(() => {
-    const subscriber = Auth().onAuthStateChanged((info) => {
-      console.log('xx', info)
-    });
-
-    return subscriber;
-  }, []);
 
   const renderLogo = () => {
     return (

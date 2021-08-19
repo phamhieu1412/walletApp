@@ -7,11 +7,15 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
+import {useDispatch} from 'react-redux';
 
 import {COLORS, SIZES, FONTS, icons, images} from '../../constants';
+import {actions} from '../../redux/UserRedux';
 import styles from './styles';
 
-const Home = () => {
+const HomeContainer = () => {
+  const dispatch = useDispatch();
+  const dispatchAddToCart = () => dispatch(actions.logout());
   const [features, setFeatures] = React.useState(featuresData);
   const [specialPromos, setSpecialPromos] = React.useState(specialPromoData);
 
@@ -24,7 +28,7 @@ const Home = () => {
         </View>
 
         <View style={styles.viewBell}>
-          <TouchableOpacity style={styles.buttonBell}>
+          <TouchableOpacity style={styles.buttonBell} onPress={dispatchAddToCart}>
             <Image source={icons.bell} style={styles.imageBell} />
             <View style={styles.dotNotification}></View>
           </TouchableOpacity>
@@ -90,7 +94,7 @@ const Home = () => {
     );
   };
 
-  function renderPromos() {
+  const renderPromos = () => {
     const HeaderComponent = () => (
       <View>
         {renderHeader()}
@@ -172,7 +176,7 @@ const Home = () => {
   return <SafeAreaView style={styles.container}>{renderPromos()}</SafeAreaView>;
 };
 
-export default Home;
+export default HomeContainer;
 
 const featuresData = [
   {
