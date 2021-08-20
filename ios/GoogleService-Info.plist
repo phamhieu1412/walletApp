@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>594377664002-ng8pcckabl73llr9t6m2l1f1tmsji984.apps.googleusercontent.com</string>
+	<string>594377664002-ave6aghs1j0i3652bo36bovoqkr8n26l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.594377664002-ng8pcckabl73llr9t6m2l1f1tmsji984</string>
+	<string>com.googleusercontent.apps.594377664002-ave6aghs1j0i3652bo36bovoqkr8n26l</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>594377664002-f8k8el8l0b4hj2ba3jjmm4rtc5iklt6v.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyC6kzxm6Cjg16a5CjBy2Po3LFO40PpqtDA</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.reactjs.native.example.walletMyApp</string>
+	<string>com.walletmyapp</string>
 	<key>PROJECT_ID</key>
 	<string>walletapp-f51d0</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:594377664002:ios:4fd107a1b5d516267a691b</string>
+	<string>1:594377664002:ios:9cf04b7b084004d87a691b</string>
 </dict>
 </plist>

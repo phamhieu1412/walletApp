@@ -33,8 +33,6 @@ class Router extends PureComponent {
 
   componentDidMount() {
     Auth().onAuthStateChanged(info => {
-      console.log('xxx info', info);
-      
       this.props.getInfoUser(info);
     });
     this.fetchCommonData();

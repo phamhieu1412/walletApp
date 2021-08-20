@@ -20,10 +20,9 @@ const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   const userRedux = useSelector(state => state.user);
-  console.log('xxx user', userRedux);
   return (
     <NavigationContainer ref={navigationRef} theme={theme}>
-      {userRedux?.token?.length > 0 ? (
+      {userRedux?.user?.uid?.length > 0 ? (
         <Stack.Navigator screenOptions={{headerShown: false}}>
           {/* Tab Screen */}
           <Stack.Screen name="Tabs" component={Tabs} />

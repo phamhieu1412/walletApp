@@ -19,21 +19,8 @@ const types = {
 };
 
 export const actions = {
-  login: (payload, meta) => async dispatch => {
-    dispatch({type: types.LOGIN_PENDING});
-
-    const json = await apiWorker.signInUser(payload);
-
-    console.log('xxx json', json);
-    // if (json.code === 200 && json.data) {
-    //   dispatch(actions.loginSuccessActions(json.data));
-    //   dispatch(actions.loadUserProfile());
-    //   toast(Languages.LoginSuccess);
-    //   meta.onSuccess();
-    // } else {
-    //   dispatch(actions.loginFailure(Languages.ErrorMessageRequest));
-    //   meta.onError();
-    // }
+  login: (payload) => dispatch => {
+    apiWorker.signInUser(payload);
   },
   // registerBookstore: (payload, meta) => async (dispatch, getState) => {
   //   dispatch({ type: types.REGISTER_PENDING });
@@ -55,20 +42,7 @@ export const actions = {
     return {type: types.LOGIN_FAILURE, error};
   },
   logout: () => dispatch => {
-    dispatch({type: types.LOGOUT});
-
-    const json = apiWorker.signOut();
-
-    console.log('xxx json', json);
-    // if (json.code === 200 && json.data) {
-    //   dispatch(actions.loginSuccessActions(json.data));
-    //   dispatch(actions.loadUserProfile());
-    //   toast(Languages.LoginSuccess);
-    //   meta.onSuccess();
-    // } else {
-    //   dispatch(actions.loginFailure(Languages.ErrorMessageRequest));
-    //   meta.onError();
-    // }
+    apiWorker.signOut();
   },
   getInfoUser: payload => dispatch => {
     dispatch({type: types.GET_INFO_USER_PENDING});
@@ -100,29 +74,17 @@ export const reducer = (state = initialState, action) => {
         isFetching: true,
         error: null,
       };
-    // case types.LOGOUT:
-    //   return {
-    //     ...initialState,
-    //     phoneNumber: state.phoneNumber, // save phone number to use when user want to login again
-    //     finishIntro: state.finishIntro,
-    //     referralId: state.referralId,
-    //     referralCode: state.referralCode,
-    //   };
 
     case types.LOGIN_SUCCESS:
       return {
         ...state,
-        // token: user.accessToken,
         isFetching: false,
-        // didInvalidateWallet: true,
       };
 
     case types.LOGIN_FAILURE:
       return {
         ...state,
-        // token: user.accessToken,
         isFetching: false,
-        // didInvalidateWallet: true,
       };
 
     case types.GET_INFO_USER_PENDING:

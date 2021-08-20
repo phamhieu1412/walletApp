@@ -7,12 +7,15 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
+import {useDispatch} from 'react-redux';
 
 import {COLORS, SIZES, icons, images} from '../../constants';
-import apiWorker from '../../services/api';
+import {actions} from '../../redux/UserRedux';
 import styles from './styles';
 
 const SignInContainer = (props) => {
+  const dispatch = useDispatch();
+  const loginAction = (payload) => dispatch(actions.login(payload));
   const [showPassword, setShowPassword] = useState(false);
   const [infoLogin, setInfoLogin] = useState({
     email: '',
@@ -95,7 +98,7 @@ const SignInContainer = (props) => {
   };
 
   const Login = () => {
-    apiWorker.signInUser(infoLogin);
+    loginAction(infoLogin);
   };
 
   const signUpUser = () => {

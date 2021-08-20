@@ -42,8 +42,8 @@ class APIWorker {
   signInUser = payload => {
     Auth()
       .signInWithEmailAndPassword(payload.email, payload.password)
-      .then(res => {
-        return res;
+      .then(() => {
+        return true;
       })
       .catch(error => {
         return error;
