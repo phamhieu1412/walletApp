@@ -1,11 +1,52 @@
 import React, {PureComponent} from 'react';
 import {View} from 'react-native';
 import {connect} from 'react-redux';
+import messaging from '@react-native-firebase/messaging';
+import notifee, { AndroidImportance, AndroidStyle, EventType } from '@notifee/react-native';
 
 import apiWorker from './services/api';
 // import { MyToast } from './containers/index';
 import AppNavigator from './navigation/index';
+import { fcmService } from './services/FCMService';
 import {Auth} from '../App';
+
+async function onMessageReceived(message) {
+  const channelId = await notifee.createChannel({
+    id: 'importanNotification',
+    name: 'Default Channel',
+    importance: AndroidImportance.HIGH,
+    sound: 'notification1',
+    vibration: true,
+    vibrationPattern: [300, 500],
+  });
+  console.log('mes:', message);
+
+  // Display a notification
+  await notifee.displayNotification({
+    title: message.notification.title,
+    body: message.notification.body,
+    subtitle: 'Thông báo',
+    data: message.data,
+    android: {
+      channelId,
+      color: 'red',
+      largeIcon: require('../assets/images/wallie-logo.png'),
+      // smallIcon: 'ic_ubo_logo_small',
+      timestamp: Date.now(),
+      sound: 'notification1',
+      vibrationPattern: [300, 500],
+      showTimestamp: true,
+      style: {
+        type: AndroidStyle.BIGTEXT,
+        text: 'You are overdue payment on one or more of your accounts! You are overdue payment on one or more of your accounts!'
+      },
+      importance: AndroidImportance.HIGH,
+    },
+  });
+}
+
+messaging().onMessage(onMessageReceived);
+messaging().setBackgroundMessageHandler(onMessageReceived);
 
 class Router extends PureComponent {
   constructor(props) {
@@ -36,6 +77,22 @@ class Router extends PureComponent {
       this.props.getInfoUser(info);
     });
     this.fetchCommonData();
+    fcmService.registerAppWithFCM();
+    fcmService.register(this.onRegister, this.onNotification, this.onOpenNotification)
+  }
+
+  componentWillUnmount() {
+    fcmService.unRegister();
+  }
+
+  onRegister = (token) => {
+    console.log('xxx onRegister', token)
+  }
+  onNotification = (notify) => {
+    console.log('xxx onRegister', notify)
+  }
+  onOpenNotification = (notify) => {
+    console.log('xxx route', notify)
   }
 
   fetchCommonData() {}

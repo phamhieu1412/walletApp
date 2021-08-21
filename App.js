@@ -5,6 +5,7 @@ import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import firebase from '@react-native-firebase/app';
 import Auth from '@react-native-firebase/auth';
+import notifee, { IOSAuthorizationStatus } from '@notifee/react-native';
 
 import store from './src/store/configureStore';
 import Router from './src/Router';
@@ -22,6 +23,17 @@ class App extends Component {
       'componentWillMount has been renamed', // turn off untill we upgrade/replace tcomb-form-native and react-native-fluid-slider.
       'componentWillReceiveProps has been renamed', // turn off untill we upgrade/replace tcomb-form-native and react-native-fluid-slider.
     ]);
+    this.requestUserPermission();
+  }
+
+  requestUserPermission = async () => {
+    const settings = await notifee.requestPermission();
+  
+    if (settings.authorizationStatus >= IOSAuthorizationStatus.AUTHORIZED) {
+      console.log('Permission settings:', settings);
+    } else {
+      console.log('User declined permissions');
+    }
   }
 
   render() {

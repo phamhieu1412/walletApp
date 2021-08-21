@@ -22,18 +22,22 @@ const AppNavigator = () => {
   const userRedux = useSelector(state => state.user);
   return (
     <NavigationContainer ref={navigationRef} theme={theme}>
-      {userRedux?.user?.uid?.length > 0 ? (
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+      {/* {userRedux?.user?.uid?.length > 0 ? (
+        <Stack.Navigator screenOptions={{headerShown: false}}> */}
           {/* Tab Screen */}
-          <Stack.Screen name="Tabs" component={Tabs} />
+          {/* <Stack.Screen name="Tabs" component={Tabs} />
         </Stack.Navigator>
       ) : (
-        <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Navigator screenOptions={{headerShown: false}}> */}
           {/* Sign Up + Sign In */}
-          <Stack.Screen name="SignIn" component={SignIn} />
+          {/* <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="SignUp" component={SignUp} />
         </Stack.Navigator>
-      )}
+      )} */}
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        {/* Tab Screen */}
+        <Stack.Screen name="Tabs" component={Tabs} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

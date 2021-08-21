@@ -21,6 +21,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		82C5823592D944DBAA6BD8A6 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 442F5FA8D432494D89FAEFC3 /* RobotoCondensed-Italic.ttf */; };
 		84AD23F226CE68B200443BCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84AD23F126CE68B200443BCE /* GoogleService-Info.plist */; };
+		84DDEA7E26CF8DF4005335CF /* notification1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84DDEA7D26CF8DF4005335CF /* notification1.mp3 */; };
 		A9ACC7D11D29492BB5C8532D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 038E3418FF9A470DB8F7399F /* Roboto-Thin.ttf */; };
 		AD90680470904D658838D644 /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95393B1AAD454E69A19381A6 /* RobotoCondensed-Regular.ttf */; };
 		BBE78F655ECC44FB9CBFB755 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 889B2EB339EE428C8C40E08F /* Roboto-LightItalic.ttf */; };
@@ -65,6 +66,7 @@
 		62153F6FF21E4AA5B5021218 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = walletMyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84AD23F126CE68B200443BCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84DDEA7D26CF8DF4005335CF /* notification1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notification1.mp3; sourceTree = "<group>"; };
 		889B2EB339EE428C8C40E08F /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		8A4B562F2EF64811B992F4FF /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoCondensed-LightItalic.ttf"; path = "../assets/fonts/RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		8EC610CC2457C80A102132D2 /* Pods-walletMyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-walletMyApp.debug.xcconfig"; path = "Target Support Files/Pods-walletMyApp/Pods-walletMyApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				CB138D22A6C64E509B538434 /* Roboto-Light.ttf */,
 				889B2EB339EE428C8C40E08F /* Roboto-LightItalic.ttf */,
 				8F4685B5FA1D4A14997C3B47 /* Roboto-Medium.ttf */,
+				84DDEA7D26CF8DF4005335CF /* notification1.mp3 */,
 				BD3F0AD39856472CA859430A /* Roboto-MediumItalic.ttf */,
 				C613F9B3DFE34614ADC5764C /* Roboto-Regular.ttf */,
 				038E3418FF9A470DB8F7399F /* Roboto-Thin.ttf */,
@@ -312,6 +315,7 @@
 				75C86828510E4852BDEB60FA /* Roboto-Black.ttf in Resources */,
 				09DA817BCC8245A5BD1D0B11 /* Roboto-BlackItalic.ttf in Resources */,
 				F343C122339B4E69BA0E97A0 /* Roboto-Bold.ttf in Resources */,
+				84DDEA7E26CF8DF4005335CF /* notification1.mp3 in Resources */,
 				DCE0A12DB8B64A7C819B19B7 /* Roboto-BoldItalic.ttf in Resources */,
 				00AEDCBF369B4A4080409BD5 /* Roboto-Italic.ttf in Resources */,
 				44A9FB4259454FC193D815C5 /* Roboto-Light.ttf in Resources */,
@@ -568,7 +572,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walletmyapp;
 				PRODUCT_NAME = walletMyApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -593,7 +597,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walletmyapp;
 				PRODUCT_NAME = walletMyApp;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

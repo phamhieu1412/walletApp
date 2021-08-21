@@ -8,9 +8,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
+import messaging from '@react-native-firebase/messaging';
+import notifee, { AndroidImportance, AndroidStyle, EventType } from '@notifee/react-native';
 
 import {COLORS, SIZES, FONTS, icons, images} from '../../constants';
 import {actions} from '../../redux/UserRedux';
+import {fcmService} from '../../services/FCMService';
 import styles from './styles';
 
 const HomeContainer = () => {
@@ -28,7 +31,9 @@ const HomeContainer = () => {
         </View>
 
         <View style={styles.viewBell}>
-          <TouchableOpacity style={styles.buttonBell} onPress={dispatchAddToCart}>
+          <TouchableOpacity
+            style={styles.buttonBell}
+            onPress={dispatchAddToCart}>
             <Image source={icons.bell} style={styles.imageBell} />
             <View style={styles.dotNotification}></View>
           </TouchableOpacity>
@@ -113,7 +118,7 @@ const HomeContainer = () => {
         <View style={{flex: 1}}>
           <Text style={{...FONTS.h3}}>Special Promos</Text>
         </View>
-        <TouchableOpacity onPress={() => console.log('View All')}>
+        <TouchableOpacity onPress={checkApplicationPermission}>
           <Text style={{color: COLORS.gray, ...FONTS.body4}}>View All</Text>
         </TouchableOpacity>
       </View>
@@ -158,6 +163,88 @@ const HomeContainer = () => {
       </TouchableOpacity>
     );
 
+    const checkApplicationPermission = async () => {
+      // const settings = await notifee.requestPermission();
+      // if (settings) {
+      //   if (settings.authorizationStatus) {
+      //     console.log('User has notification permissions enabled', settings);
+      //   } else {
+      //     console.log('User not notification permissions enabled', settings);
+      //   }
+      // }
+
+      // const channelId = await notifee.createChannel({
+      //   id: 'important',
+      //   name: 'Important Notifications',
+      //   importance: AndroidImportance.HIGH,
+      //   sound: 'notification1',
+      //   vibration: true,
+      //   vibrationPattern: [300, 500],
+      // });
+      // await notifee.displayNotification({
+      //   title: 'Your account 1 attention',
+      //   body: 'Custom sound',
+      //   ios: {
+      //     // iOS resource (.wav, aiff, .caf)
+      //     sound: 'notification1.mp3',
+      //     attachments: [
+      //       {
+      //         // iOS resource
+      //         url: 'https://www.pxpng.com/public/uploads/preview/-11601774644rkfopjcrfk.png',
+      //         thumbnailHidden: false,
+      //       },
+      //     ],
+      //     foregroundPresentationOptions: {
+      //       alert: true,
+      //       badge: true,
+      //       sound: true,
+      //     },
+      //   },
+        // android: {
+        //   channelId,
+        //   color: '#4caf50',
+        //   largeIcon: 'https://www.pxpng.com/public/uploads/preview/-11601774644rkfopjcrfk.png',
+        //   actions: [
+        //     {
+        //       title: '<b>Dance</b> &#128111;',
+        //       pressAction: { id: 'dance' },
+        //     },
+        //     {
+        //       title: '<p style="color: #f44336;"><b>Cry</b> &#128557;</p>',
+        //       pressAction: { id: 'cry' },
+        //     },
+        //   ],
+        //   timestamp: Date.now(),
+        //   sound: 'notification1',
+        //   vibrationPattern: [300, 500],
+        //   showTimestamp: true,
+        //   style: {
+        //     type: AndroidStyle.BIGTEXT,
+        //     text: 'You are overdue payment on one or more of your accounts! You are overdue payment on one or more of your accounts!'
+        //   },
+        //   importance: AndroidImportance.HIGH,
+        // },
+      // });
+      // go to manager notification settings
+      // await notifee.openNotificationSettings();
+      console.log('0');
+      // action when app is foreground(onForegroundEvent) and onBackground(onBackgroundEvent)
+      // notifee.onForegroundEvent(({ type, detail }) => {
+      //   console.log('1', detail, type);
+      //   if (type === EventType.APP_BLOCKED) {
+      //     console.log('User toggled app blocked', detail.blocked);
+      //   }
+      
+      //   if (type === EventType.CHANNEL_BLOCKED) {
+      //     console.log('User toggled channel block', detail.channel.id, detail.blocked);
+      //   }
+      
+      //   if (type === EventType.CHANNEL_GROUP_BLOCKED) {
+      //     console.log('User toggled channel group block', detail.channelGroup.id, detail.blocked);
+      //   }
+      // });
+    };
+
     return (
       <FlatList
         ListHeaderComponent={HeaderComponent}
@@ -171,7 +258,7 @@ const HomeContainer = () => {
         ListFooterComponent={<View style={{marginBottom: 80}}></View>}
       />
     );
-  }
+  };
 
   return <SafeAreaView style={styles.container}>{renderPromos()}</SafeAreaView>;
 };

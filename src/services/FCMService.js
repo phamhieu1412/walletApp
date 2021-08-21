@@ -34,7 +34,7 @@ class FCMService {
   };
 
   getToken = onRegister => {
-    messaging
+    messaging()
       .getToken()
       .then(fcmToken => {
         if (fcmToken) {
