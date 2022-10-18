@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {View, NativeModules} from 'react-native';
+import {View, NativeModules, NativeEventEmitter} from 'react-native';
 import {connect} from 'react-redux';
 import messaging from '@react-native-firebase/messaging';
 import notifee, { AndroidImportance, AndroidStyle, EventType } from '@notifee/react-native';
@@ -74,8 +74,44 @@ class Router extends PureComponent {
   }
 
   componentDidMount() {
-    const { ZaloPayBridge } = NativeModules;
-    console.log('xxx 112', NativeModules?.ZaloPayBridge, ZaloPayBridge);
+    // const { ZaloPayBridge } = NativeModules;
+    // const payZaloBridgeEmitter = new NativeEventEmitter(ZaloPayBridge); // android
+    // console.log('xxx 112', NativeModules?.ZaloPayBridge, ZaloPayBridge);
+    // const { ZaloPayBridge } = NativeModules;
+    // reactotron.log!(NativeModules?.ZaloPayBridge, 'br');
+    // const payZaloBridgeEmitter = new NativeEventEmitter(ZaloPayBridge);
+  
+    // const [dialogLoading, setDialogLoading] = useState(false);
+    // const payOrder = (token: string) => {
+    //   const payZP = NativeModules.ZaloPayBridge;
+    //   payZP.payOrder(token);
+    // };
+    // useEffect(() => {
+    //   const subscription = payZaloBridgeEmitter.addListener(
+    //     'EventPayZalo',
+    //     (data: any) => {
+    //       if (data.returnCode == 1) {
+    //         onNavigate();
+    //       } else if (data.returnCode == -1) {
+    //         ZaloPayBridge.installApp();
+    //         Alert.alert('Pay errror! ' + data.returnCode);
+    //       }
+    //     },
+    //   );
+    //   return () => subscription?.remove();
+    // }, []);
+    // const createOrder = async () => {
+    //   try {
+    //     setDialogLoading(true);
+    //     const res: ZaloPaymentRoot = await requestCreateOrder(
+    //       bookingDetail?.booking?.id,
+    //     );
+    //     payOrder(res.data.data.zp_trans_token);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
+
     Auth().onAuthStateChanged(info => {
       this.props.getInfoUser(info);
     });
