@@ -4,6 +4,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <Firebase.h>
+#import <zpdk/zpdk.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -28,9 +29,9 @@ static void InitializeFlipper(UIApplication *application) {
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#ifdef FB_SONARKIT_ENABLED
-  InitializeFlipper(application);
-#endif
+  #ifdef FB_SONARKIT_ENABLED
+    InitializeFlipper(application);
+  #endif
 
   if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
@@ -52,7 +53,16 @@ static void InitializeFlipper(UIApplication *application) {
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+
+  //Khởi tạo ZPDK
+  [[ZaloPaySDK sharedInstance] initWithAppId:1412 uriScheme:@"wallet://app" environment: ZPZPIEnvironment_Production];
+
   return YES;
+}
+
+//gọi tới ZPDK để xử lý trao đổi dữ liệu giữa ZaloPay với app
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+  return [[ZaloPaySDK sharedInstance] application:app openURL:url sourceApplication:@"vn.com.vng.zalopay" annotation:nil];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import {View} from 'react-native';
+import {View, NativeModules} from 'react-native';
 import {connect} from 'react-redux';
 import messaging from '@react-native-firebase/messaging';
 import notifee, { AndroidImportance, AndroidStyle, EventType } from '@notifee/react-native';
@@ -48,6 +48,7 @@ async function onMessageReceived(message) {
 messaging().onMessage(onMessageReceived);
 messaging().setBackgroundMessageHandler(onMessageReceived);
 
+
 class Router extends PureComponent {
   constructor(props) {
     super(props);
@@ -73,6 +74,8 @@ class Router extends PureComponent {
   }
 
   componentDidMount() {
+    const { ZaloPayBridge } = NativeModules;
+    console.log('xxx 112', NativeModules?.ZaloPayBridge, ZaloPayBridge);
     Auth().onAuthStateChanged(info => {
       this.props.getInfoUser(info);
     });
