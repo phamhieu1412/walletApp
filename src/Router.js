@@ -1,14 +1,20 @@
 import React, {PureComponent} from 'react';
-import {View, NativeModules, NativeEventEmitter} from 'react-native';
+import {View, NativeModules, NativeEventEmitter, Button} from 'react-native';
 import {connect} from 'react-redux';
 import messaging from '@react-native-firebase/messaging';
-import notifee, { AndroidImportance, AndroidStyle, EventType } from '@notifee/react-native';
+import notifee, {
+  AndroidImportance,
+  AndroidStyle,
+  EventType,
+} from '@notifee/react-native';
 
 import apiWorker from './services/api';
 // import { MyToast } from './containers/index';
 import AppNavigator from './navigation/index';
-import { fcmService } from './services/FCMService';
+import {fcmService} from './services/FCMService';
 import {Auth} from '../App';
+
+const {DynamicIslandModule} = NativeModules;
 
 async function onMessageReceived(message) {
   const channelId = await notifee.createChannel({
@@ -38,7 +44,7 @@ async function onMessageReceived(message) {
       showTimestamp: true,
       style: {
         type: AndroidStyle.BIGTEXT,
-        text: 'You are overdue payment on one or more of your accounts! You are overdue payment on one or more of your accounts!'
+        text: 'You are overdue payment on one or more of your accounts! You are overdue payment on one or more of your accounts!',
       },
       importance: AndroidImportance.HIGH,
     },
@@ -47,7 +53,6 @@ async function onMessageReceived(message) {
 
 messaging().onMessage(onMessageReceived);
 messaging().setBackgroundMessageHandler(onMessageReceived);
-
 
 class Router extends PureComponent {
   constructor(props) {
@@ -74,13 +79,14 @@ class Router extends PureComponent {
   }
 
   componentDidMount() {
+    console.log('NativeModules', NativeModules);
     // const { ZaloPayBridge } = NativeModules;
     // const payZaloBridgeEmitter = new NativeEventEmitter(ZaloPayBridge); // android
     // console.log('xxx 112', NativeModules?.ZaloPayBridge, ZaloPayBridge);
     // const { ZaloPayBridge } = NativeModules;
     // reactotron.log!(NativeModules?.ZaloPayBridge, 'br');
     // const payZaloBridgeEmitter = new NativeEventEmitter(ZaloPayBridge);
-  
+
     // const [dialogLoading, setDialogLoading] = useState(false);
     // const payOrder = (token: string) => {
     //   const payZP = NativeModules.ZaloPayBridge;
@@ -117,30 +123,46 @@ class Router extends PureComponent {
     });
     this.fetchCommonData();
     fcmService.registerAppWithFCM();
-    fcmService.register(this.onRegister, this.onNotification, this.onOpenNotification)
+    fcmService.register(
+      this.onRegister,
+      this.onNotification,
+      this.onOpenNotification,
+    );
   }
 
   componentWillUnmount() {
     fcmService.unRegister();
   }
 
-  onRegister = (token) => {
-    console.log('xxx onRegister', token)
-  }
-  onNotification = (notify) => {
-    console.log('xxx onRegister', notify)
-  }
-  onOpenNotification = (notify) => {
-    console.log('xxx route', notify)
-  }
+  onRegister = token => {
+    console.log('xxx onRegister', token);
+  };
+  onNotification = notify => {
+    console.log('xxx onRegister', notify);
+  };
+  onOpenNotification = notify => {
+    console.log('xxx route', notify);
+  };
 
   fetchCommonData() {}
 
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, marginTop: 50}}>
         {/* <MyToast /> */}
-        <AppNavigator />
+        {/* <AppNavigator /> */}
+        <Button
+          title="Start Activity"
+          onPress={() => DynamicIslandModule.startNotificationActivity('title T', 'msg T')}
+        />
+        <Button
+          title="Update Activity"
+          onPress={() => DynamicIslandModule.updateNotificationActivity('msg U')}
+        />
+        <Button
+          title="End Activity"
+          onPress={() => DynamicIslandModule.endNotificationActivity()}
+        />
       </View>
     );
   }

@@ -19,9 +19,21 @@
 		5EB68363A54E44CB82CF7F30 /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3BBD7E406E54B4D980FC0DB /* RobotoCondensed-Bold.ttf */; };
 		75C86828510E4852BDEB60FA /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B3EF716E32124509835EE5C1 /* Roboto-Black.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8217FCAE28FE5FA8007AD482 /* ActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCAD28FE5FA8007AD482 /* ActivityAttributes.swift */; };
+		8217FCB528FE5FBF007AD482 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8217FCB428FE5FBF007AD482 /* WidgetKit.framework */; };
+		8217FCB728FE5FBF007AD482 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8217FCB628FE5FBF007AD482 /* SwiftUI.framework */; };
+		8217FCBA28FE5FBF007AD482 /* NotificationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCB928FE5FBF007AD482 /* NotificationWidget.swift */; };
+		8217FCBD28FE5FC1007AD482 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8217FCBC28FE5FC1007AD482 /* Assets.xcassets */; };
+		8217FCBF28FE5FC1007AD482 /* NotificationWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCBB28FE5FBF007AD482 /* NotificationWidget.intentdefinition */; };
+		8217FCC028FE5FC1007AD482 /* NotificationWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCBB28FE5FBF007AD482 /* NotificationWidget.intentdefinition */; };
+		8217FCC328FE5FC1007AD482 /* NotificationWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8217FCB328FE5FBF007AD482 /* NotificationWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8217FCC828FE8B26007AD482 /* ActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCAD28FE5FA8007AD482 /* ActivityAttributes.swift */; };
+		8217FCCB28FE8C4E007AD482 /* DynamicIslandModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCCA28FE8C4E007AD482 /* DynamicIslandModule.swift */; };
+		8217FCCD28FE8F76007AD482 /* DynamicIslandBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCCC28FE8F76007AD482 /* DynamicIslandBridge.m */; };
 		8255A64727F2F20C0058D278 /* zpdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8255A64627F2F20C0058D278 /* zpdk.framework */; };
 		8255A64927F2FD430058D278 /* ZaloPayBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8255A64827F2FD430058D278 /* ZaloPayBridge.m */; };
 		82C5823592D944DBAA6BD8A6 /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 442F5FA8D432494D89FAEFC3 /* RobotoCondensed-Italic.ttf */; };
+		82E3C144290A379F008E98E4 /* DynamicIslandModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8217FCCA28FE8C4E007AD482 /* DynamicIslandModule.swift */; };
 		84AD23F226CE68B200443BCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84AD23F126CE68B200443BCE /* GoogleService-Info.plist */; };
 		84DDEA7E26CF8DF4005335CF /* notification1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84DDEA7D26CF8DF4005335CF /* notification1.mp3 */; };
 		A9ACC7D11D29492BB5C8532D /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 038E3418FF9A470DB8F7399F /* Roboto-Thin.ttf */; };
@@ -46,7 +58,28 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = walletMyApp;
 		};
+		8217FCC128FE5FC1007AD482 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8217FCB228FE5FBF007AD482;
+			remoteInfo = NotificationWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8217FCC728FE5FC1007AD482 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8217FCC328FE5FC1007AD482 /* NotificationWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00E356EE1AD99517003FC87E /* walletMyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = walletMyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,9 +100,20 @@
 		505E789FB085432A816B2806 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Italic.ttf"; path = "../assets/fonts/Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		62153F6FF21E4AA5B5021218 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = walletMyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8217FCAD28FE5FA8007AD482 /* ActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAttributes.swift; sourceTree = "<group>"; };
+		8217FCB328FE5FBF007AD482 /* NotificationWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8217FCB428FE5FBF007AD482 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		8217FCB628FE5FBF007AD482 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		8217FCB928FE5FBF007AD482 /* NotificationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationWidget.swift; sourceTree = "<group>"; };
+		8217FCBB28FE5FBF007AD482 /* NotificationWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = NotificationWidget.intentdefinition; sourceTree = "<group>"; };
+		8217FCBC28FE5FC1007AD482 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8217FCBE28FE5FC1007AD482 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8217FCCA28FE8C4E007AD482 /* DynamicIslandModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicIslandModule.swift; sourceTree = "<group>"; };
+		8217FCCC28FE8F76007AD482 /* DynamicIslandBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicIslandBridge.m; sourceTree = "<group>"; };
 		8255A64627F2F20C0058D278 /* zpdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = zpdk.framework; sourceTree = "<group>"; };
 		8255A64827F2FD430058D278 /* ZaloPayBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZaloPayBridge.m; sourceTree = "<group>"; };
 		8255A64A27F2FD560058D278 /* ZaloPayBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZaloPayBridge.h; sourceTree = "<group>"; };
+		82E3C147290A7F4C008E98E4 /* walletMyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "walletMyApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		84AD23F126CE68B200443BCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84DDEA7D26CF8DF4005335CF /* notification1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = notification1.mp3; sourceTree = "<group>"; };
 		889B2EB339EE428C8C40E08F /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -109,6 +153,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8217FCB028FE5FBF007AD482 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8217FCB728FE5FBF007AD482 /* SwiftUI.framework in Frameworks */,
+				8217FCB528FE5FBF007AD482 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -132,6 +185,7 @@
 		13B07FAE1A68108700A75B9A /* walletMyApp */ = {
 			isa = PBXGroup;
 			children = (
+				8288241F291214FD003B84CB /* NotificationDynIs */,
 				8255A64327F2EF140058D278 /* ZaloPayBridge */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -140,6 +194,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				84AD23F126CE68B200443BCE /* GoogleService-Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				8217FCAD28FE5FA8007AD482 /* ActivityAttributes.swift */,
 			);
 			name = walletMyApp;
 			sourceTree = "<group>";
@@ -151,6 +206,8 @@
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				9217414D2E921122E25013CD /* libPods-walletMyApp.a */,
 				1F24F17D79D34C131CC9E194 /* libPods-walletMyApp-walletMyAppTests.a */,
+				8217FCB428FE5FBF007AD482 /* WidgetKit.framework */,
+				8217FCB628FE5FBF007AD482 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,6 +249,17 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		8217FCB828FE5FBF007AD482 /* NotificationWidget */ = {
+			isa = PBXGroup;
+			children = (
+				8217FCB928FE5FBF007AD482 /* NotificationWidget.swift */,
+				8217FCBB28FE5FBF007AD482 /* NotificationWidget.intentdefinition */,
+				8217FCBC28FE5FC1007AD482 /* Assets.xcassets */,
+				8217FCBE28FE5FC1007AD482 /* Info.plist */,
+			);
+			path = NotificationWidget;
+			sourceTree = "<group>";
+		};
 		8255A64327F2EF140058D278 /* ZaloPayBridge */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +267,16 @@
 				8255A64A27F2FD560058D278 /* ZaloPayBridge.h */,
 			);
 			name = ZaloPayBridge;
+			sourceTree = "<group>";
+		};
+		8288241F291214FD003B84CB /* NotificationDynIs */ = {
+			isa = PBXGroup;
+			children = (
+				8217FCCA28FE8C4E007AD482 /* DynamicIslandModule.swift */,
+				8217FCCC28FE8F76007AD482 /* DynamicIslandBridge.m */,
+				82E3C147290A7F4C008E98E4 /* walletMyApp-Bridging-Header.h */,
+			);
+			name = NotificationDynIs;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -214,6 +292,7 @@
 				13B07FAE1A68108700A75B9A /* walletMyApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* walletMyAppTests */,
+				8217FCB828FE5FBF007AD482 /* NotificationWidget */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				3D43500126A19EEBA4A9101B /* Pods */,
@@ -229,6 +308,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* walletMyApp.app */,
 				00E356EE1AD99517003FC87E /* walletMyAppTests.xctest */,
+				8217FCB328FE5FBF007AD482 /* NotificationWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,15 +349,34 @@
 				F329980984DD0FEB1FE9EA3E /* [CP] Copy Pods Resources */,
 				AA9DBBAF27C1C4C448A45DCD /* [CP-User] [RNFB] Core Configuration */,
 				DF6095F5078B7E97A77293B2 /* [CP-User] [NOTIFEE] Config */,
+				8217FCC728FE5FC1007AD482 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8217FCC228FE5FC1007AD482 /* PBXTargetDependency */,
 			);
 			name = walletMyApp;
 			productName = walletMyApp;
 			productReference = 13B07F961A680F5B00A75B9A /* walletMyApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8217FCB228FE5FBF007AD482 /* NotificationWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8217FCC428FE5FC1007AD482 /* Build configuration list for PBXNativeTarget "NotificationWidgetExtension" */;
+			buildPhases = (
+				8217FCAF28FE5FBF007AD482 /* Sources */,
+				8217FCB028FE5FBF007AD482 /* Frameworks */,
+				8217FCB128FE5FBF007AD482 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotificationWidgetExtension;
+			productName = NotificationWidgetExtension;
+			productReference = 8217FCB328FE5FBF007AD482 /* NotificationWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -285,6 +384,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -292,7 +392,10 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1400;
+					};
+					8217FCB228FE5FBF007AD482 = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
@@ -311,6 +414,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* walletMyApp */,
 				00E356ED1AD99517003FC87E /* walletMyAppTests */,
+				8217FCB228FE5FBF007AD482 /* NotificationWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -349,6 +453,14 @@
 				F0F6E7E7CDFD4DF2920F5501 /* RobotoCondensed-LightItalic.ttf in Resources */,
 				AD90680470904D658838D644 /* RobotoCondensed-Regular.ttf in Resources */,
 				84AD23F226CE68B200443BCE /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8217FCB128FE5FBF007AD482 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8217FCBD28FE5FC1007AD482 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +618,22 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				8255A64927F2FD430058D278 /* ZaloPayBridge.m in Sources */,
+				8217FCCB28FE8C4E007AD482 /* DynamicIslandModule.swift in Sources */,
+				8217FCCD28FE8F76007AD482 /* DynamicIslandBridge.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				8217FCC028FE5FC1007AD482 /* NotificationWidget.intentdefinition in Sources */,
+				8217FCAE28FE5FA8007AD482 /* ActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8217FCAF28FE5FBF007AD482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8217FCC828FE8B26007AD482 /* ActivityAttributes.swift in Sources */,
+				8217FCBA28FE5FBF007AD482 /* NotificationWidget.swift in Sources */,
+				82E3C144290A379F008E98E4 /* DynamicIslandModule.swift in Sources */,
+				8217FCBF28FE5FC1007AD482 /* NotificationWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +645,11 @@
 			target = 13B07F861A680F5B00A75B9A /* walletMyApp */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
+		8217FCC228FE5FC1007AD482 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8217FCB228FE5FBF007AD482 /* NotificationWidgetExtension */;
+			targetProxy = 8217FCC128FE5FC1007AD482 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -525,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC6DCD245FA74AFFC68BBAD7 /* Pods-walletMyApp-walletMyAppTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -552,6 +685,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF49A0A396896F9F02710C7E /* Pods-walletMyApp-walletMyAppTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = walletMyAppTests/Info.plist;
@@ -576,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8EC610CC2457C80A102132D2 /* Pods-walletMyApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -586,6 +721,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = walletMyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -607,6 +743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEF2361D0926519EA60940D4 /* Pods-walletMyApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -616,6 +753,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = walletMyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,6 +767,96 @@
 				PRODUCT_NAME = walletMyApp;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		8217FCC528FE5FC1007AD482 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AW7TZUCP76;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walletmyapp.NotificationWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8217FCC628FE5FC1007AD482 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = AW7TZUCP76;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.walletmyapp.NotificationWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -687,8 +915,8 @@
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -745,8 +973,8 @@
 					"$(inherited)",
 				);
 				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -772,6 +1000,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8217FCC428FE5FC1007AD482 /* Build configuration list for PBXNativeTarget "NotificationWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8217FCC528FE5FC1007AD482 /* Debug */,
+				8217FCC628FE5FC1007AD482 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
